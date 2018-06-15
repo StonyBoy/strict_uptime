@@ -1,0 +1,6 @@
+[package]
+name = "strict_uptime"
+version = "0.1.0"
+authors = ["Steen Hegelund <steen.hegelund@microsemi.com>"]
+
+[dependencies]
