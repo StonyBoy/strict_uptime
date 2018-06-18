@@ -24,11 +24,12 @@ fn strict_uptime(secs : u64) -> String {
     const SECS_PER_DAY : u64 = 86400;
     const SECS_PER_HOUR : u64 = 3600;
     const SECS_PER_MINUTE : u64 = 60;
+    const SEPARATOR : char = '\u{205d}';
     let days = secs / SECS_PER_DAY;
     let remainder = secs % SECS_PER_DAY;
     let hours = remainder / SECS_PER_HOUR;
     let minutes = remainder % SECS_PER_HOUR / SECS_PER_MINUTE;
-    format!("{:>3} {:>02} {:>02}", days, hours, minutes)
+    format!("{:>3}{}{:>02}{}{:>02}", days, SEPARATOR, hours, SEPARATOR, minutes)
 }
 
 fn main() {
