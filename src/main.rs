@@ -29,12 +29,12 @@ fn strict_uptime(secs : u64) -> String {
     let remainder = secs % SECS_PER_DAY;
     let hours = remainder / SECS_PER_HOUR;
     let minutes = remainder % SECS_PER_HOUR / SECS_PER_MINUTE;
-    format!("{:>3}{}{:>02}{}{:>02}", days, SEPARATOR, hours, SEPARATOR, minutes)
+    format!("{:}{}{:>02}{}{:>02}", days, SEPARATOR, hours, SEPARATOR, minutes)
 }
 
 fn main() {
     match read_uptime() {
         Ok(value) => println!("up(DHM): {}", strict_uptime(value)),
-        Err(err) => eprintln!("uptime: error {}", err.to_string()),
+        Err(err) => eprintln!("strict_uptime: error {}", err.to_string()),
     }
 }
