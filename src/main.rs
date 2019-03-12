@@ -34,7 +34,7 @@ fn strict_uptime(secs : u64) -> String {
 
 fn main() {
     match read_uptime() {
-        Ok(value) => println!("up(DHM): {}", strict_uptime(value)),
+        Ok(value) => println!("{}", strict_uptime(value)),
         Err(err) => eprintln!("strict_uptime: error {}", err.to_string()),
     }
 }
