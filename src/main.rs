@@ -24,7 +24,7 @@ fn strict_uptime(secs : u64) -> String {
     const SECS_PER_DAY : u64 = 86400;
     const SECS_PER_HOUR : u64 = 3600;
     const SECS_PER_MINUTE : u64 = 60;
-    const SEPARATOR : char = '\u{205d}';
+    const SEPARATOR : char = '\u{22a5}';
     let days = secs / SECS_PER_DAY;
     let remainder = secs % SECS_PER_DAY;
     let hours = remainder / SECS_PER_HOUR;
