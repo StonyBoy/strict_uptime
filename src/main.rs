@@ -1,10 +1,12 @@
 use std::fs::File;
 use std::io::Read;
 
+const PATH: &str = "/proc/uptime";
+
 fn read_uptime() -> Result<u64, String> {
-    let mut file = match File::open("/proc/uptime") {
+    let mut file = match File::open(PATH) {
         Ok(file) => file,
-        Err(err) => return Err(err.to_string()),
+        Err(err) => return Err(format!("'{}': {}", PATH, err.to_string())),
     };
     let mut contents = String::new();
     if let Err(err) = file.read_to_string(&mut contents) {
