@@ -3,6 +3,9 @@ use std::io::Read;
 
 const PATH: &str = "/proc/uptime";
 
+// On MacOS you can get the uptime in seconds from this
+// shell command: sysctl -n kern.boottime | cut -c14-18
+
 fn read_uptime() -> Result<u64, String> {
     let mut file = match File::open(PATH) {
         Ok(file) => file,
